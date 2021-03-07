@@ -62,6 +62,8 @@
 - nodemon: para uso local do servidor
 - passport: validações e autenticação dos usuários
 - passport-local: para utilização do usuário local
+- jest: Testes Unitários
+- supertes: Para teste de middlewares
 
 ## License
 - MIT
