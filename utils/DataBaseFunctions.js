@@ -84,18 +84,6 @@ async function verifyUser (username) {
 }
 
 /**
- * Verifica se a senha está correta
- * @param {*} username
- * @param {*} password
- * @returns se está ou não
- */
-async function verifyPassword (username, password) {
-  await username.checkPassword(password)
-
-  return password
-}
-
-/**
  * Cria um novo usuário no sistema
  * @param {*} username
  * @param {*} password
@@ -117,6 +105,5 @@ module.exports = {
   findAndUpdateRented,
   findBooks,
   findOneBook,
-  verifyPassword,
   verifyUser
 }

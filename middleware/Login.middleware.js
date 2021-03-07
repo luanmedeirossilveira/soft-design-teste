@@ -3,7 +3,6 @@ const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const {
   verifyUser,
-  verifyPassword,
   createUser
 } = require('../utils/DataBaseFunctions')
 
@@ -30,10 +29,7 @@ passport.use(new LocalStrategy(async (username, password, done) => {
   if (!user) {
     return done(null, false, { erro: 'Email incorreto.' })
   } else {
-    const isValid = verifyPassword(
-      username,
-      password)
-      .then(doc => console.log(doc))
+    const isValid = await user.checkPassword(password)
       .catch(err => console.log(err))
     if (isValid) {
       return done(null, user)
@@ -91,13 +87,14 @@ router.post('/register', (request, response, next) => {
     } else {
       createUser(username, password).then(res => {
         console.log(res)
+        response.status(200)
+        next()
       }).catch(error => {
         console.log(error)
+        response.status(404).send('Erro ao fazer seu cadastro')
       })
     }
   })
-
-  next()
 })
 
 module.exports = router
