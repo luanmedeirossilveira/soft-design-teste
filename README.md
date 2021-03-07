@@ -16,9 +16,12 @@
   ~~~
 - Inicie o servidor com o comando
 ~~~javascript
+  npm dev
+~~~
+- Para executar testes unitários
+~~~javascript
   npm test
 ~~~
-
 ## Navegação de pastas
   ```
   softdesign-booklist
@@ -42,6 +45,9 @@
   |     |   Book.model.js -> Modelagem do DB dos livros
   |     |   Login.model.js -> Modelagem do DB de Login e Cadastro
   │     |
+  └─── tests
+  |     |   server.test.js -> Testes unitários
+  |     |
   └─── utils
   |     |   DataBaseFunctions.js -> Funções de conexão com o banco de dados para utilização futura em outras parte do código
   ```
