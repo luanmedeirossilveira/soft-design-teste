@@ -1,7 +1,7 @@
 # APP: Lista de Livros 
 
 ## Objetivo:
-- Listagem de livros para alguéis com filtros e pesquisa.
+- Listagem de livros para aluguéis com filtros e pesquisa.
 - CRUD de inserção, edição e exclusão de livros
 - Login necessário para navegação na aplicação.
 
