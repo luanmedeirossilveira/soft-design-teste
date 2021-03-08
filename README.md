@@ -22,6 +22,25 @@
 ~~~javascript
   npm test
 ~~~
+## Chamadas de API
+ JSON payloads and is based on body-parser.
+- Dashboard:
+  - Rota: '/' -> Redireciona a rota '/login'
+- Login
+  - Rotas:
+    - '/login' [post] -> recebe login do usuário {username, password}
+    - '/login' [get] -> verificação de login do usuário se query é fail ou não
+    - '/login/register' [post] -> cadastro do usuário {username, password}
+- List of Book
+  - Rotas
+    - '/list/search/:search' [get] -> Lista de todos os livros com filtro se necessário. Por Query. {nomeDoFiltro: valorDoFiltro}
+    - '/list/filter/:filter' [get] -> Descrição de um livro com filtro do nome do livro. Por Query. {"name": nomeDoLivro}
+    - '/list/rented/:filter' [post] -> Aluguel do livro se estiver disponível. Por Query. {"filter": nomeDoLivro, "user": nomeDoUsuario}
+- Book Insertion
+  - Rotas 
+    - '/insert' [post] -> Inserção de um livro. {"name": nomeDoLivro, "year": ano, "author": autor, "company": editora, "rented": seAlugado[boolean], "user": usuario}
+    - '/insert' [put] -> Edição de um livro. { "filter": {nomeDoFiltro: valorDoFiltro}, "update": {nomeDoUpdate: valorDoUpdate} }
+    - '/insert' [delete] -> Exclusão de um livro. { "filter": {nomeDoFiltro: valorDoFiltro} }
 ## Navegação de pastas
   ```
   softdesign-booklist
